@@ -1,0 +1,107 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title%} Services {% endblock %}
+{% block content %}
+
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span class="text-white">Our services</span>
+          <h1 class="text-capitalize mb-5 text-lg">What We Do</h1>
+
+          <!-- <ul class="list-inline breadcumb-nav">
+            <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
+            <li class="list-inline-item"><span class="text-white">/</span></li>
+            <li class="list-inline-item"><a href="#" class="text-white-50">Our services</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section service-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5">
+					<img src="{% static 'assets/images/service/service-1.jpeg' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Virtual Consultations</h4>
+						<p class="mb-4">Connect with qualified doctors from the comfort of your home via secure video calls. Our virtual consultations provide expert diagnosis, personalized treatment plans, and professional medical advice without the need for in-person visits.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5">
+					<img src="{% static 'assets/images/service/service-2.jpg' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Prescription Management</h4>
+						<p class="mb-4">Easily manage your prescriptions online. Get e-prescriptions directly from doctors after consultations and have your medications delivered to your doorstep or picked up from a nearby pharmacy.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5">
+					<img src="{% static 'assets/images/service/service-3.jpeg' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Chronic Disease Management</h4>
+						<p class="mb-4">Monitor and manage chronic conditions such as diabetes, hypertension, and arthritis with the help of our healthcare experts. Receive personalized care plans and regular follow-ups to improve your quality of life.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5 mb-lg-0">
+					<img src="{% static 'assets/images/service/service-4.jpeg' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Mental Health Support</h4>
+						<p class="mb-4">Access confidential and compassionate support for mental health concerns. Our platform connects you with experienced therapists and counselors for personalized care, ensuring your emotional well-being.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5 mb-lg-0">
+					<img src="{% static 'assets/images/service/service-6.png' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Pediatric Care</h4>
+						<p class="mb-4">Ensure your child’s health with specialized pediatric care services. From routine check-ups to consultations for specific health concerns, our experts are here to provide comprehensive care for your little ones.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-block mb-5 mb-lg-0">
+					<img src="{% static 'assets/images/service/service-8.jpeg' %}" alt="" class="img-fluid">
+					<div class="content">
+						<h4 class="mt-4 mb-2 title-color">Emergency Triage</h4>
+						<p class="mb-4">Quickly assess urgent medical situations with our emergency triage service. Our platform helps determine the severity of your condition and guides you to the most appropriate care, whether virtual or in-person.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section cta-page">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7">
+				<div class="cta-content">
+					<div class="divider mb-4"></div>
+					<h2 class="mb-5 text-lg">We are pleased to offer you the <span class="title-color">chance to have the healthy</span></h2>
+					<a href="{% url 'telemed_app:appointments' %}" class="btn btn-main-2 btn-round-full">Get appoinment<i class="icofont-simple-right  ml-2"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

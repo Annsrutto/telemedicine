@@ -1,0 +1,398 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title%} Home {% endblock %}
+{% block content %}
+
+{% if messages %}
+<ul>
+  {% for message in messages %}
+    <li class="{% if message.tags == 'error' %}text-danger{% else %}text-success{% endif %}" >
+      {{ message }}
+    </li>
+  {% endfor %}
+</ul>
+{%endif%}
+
+<!-- Slider section -->
+<section class="banner">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-xl-7">
+				<div class="block">
+					<div class="divider mb-3"></div>
+					<!-- <span class="text-uppercase text-sm letter-spacing text-dark ">Total Health care solution</span> -->
+					<h1 class="mb-3 mt-3">Your most trusted health partner</h1>
+					
+					<p class="mb-4 pr-5 text-dark">Breaking down barriers in healthcare, Daraja Care offers a seamless platform for remote consultations, providing care to those in remote locations and patients with limited mobility.</p>
+					<div class="btn-container ">
+						<a href="{% url 'telemed_app:appointments' %}" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Book Appointment<i class="icofont-simple-right ml-2  "></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="features">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="feature-block d-lg-flex">
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-surgeon-alt"></i>
+						</div>
+						<span>24 Hours Service</span>
+						<h4 class="mb-3">Online Appointment</h4>
+						<p class="mb-4">Round-the-clock healthcare access at your fingertips. Our dedicated medical professionals are always ready to provide expert care, diagnoses, and consultations—day or night.</p>
+						<a href="{% url 'telemed_app:appointments' %}" class="btn btn-main btn-round-full">Book an appointment</a>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-ui-clock"></i>
+						</div>
+						<span>Timing schedule</span>
+						<h4 class="mb-3">Working Hours</h4>
+						<ul class="w-hours list-unstyled">
+		                    <li class="d-flex justify-content-between">Sun - Wed : <span>8:00 - 17:00</span></li>
+		                    <li class="d-flex justify-content-between">Thu - Fri : <span>9:00 - 17:00</span></li>
+		                    <li class="d-flex justify-content-between">Sat - sun : <span>10:00 - 17:00</span></li>
+		                </ul>
+					</div>
+				
+					<div class="feature-item mb-5 mb-lg-0">
+						<div class="feature-icon mb-4">
+							<i class="icofont-support"></i>
+						</div>
+						<span>Emergency Cases</span>
+						<h4 class="mb-3">020 5023000</h4>
+						<p>Facing a medical emergency? Reach out to us anytime at 020 5023000 for immediate support.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- About Section -->
+<section class="section about">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img">
+					<img src="{% static 'assets/images/about/img-1.jpg' %}" alt="" class="img-fluid">
+					<img src="{% static 'assets/images/about/img-2.jpg' %}" alt="" class="img-fluid mt-4">
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6">
+				<div class="about-img mt-4 mt-lg-0">
+					<img src="{% static 'assets/images/about/img-3.jpg' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div class="about-content pl-4 mt-4 mt-lg-0">
+					<h2 class="title-color">Personal care <br>& healthy living</h2>
+					<p class="mt-4 mb-5">At Daraja Care, we believe healthcare is more than treating illness.  Our platform is dedicated to providing you with the resources and support you need to live a healthier, happier life.</p>
+
+					<a href="{% url 'telemed_app:services' %}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="cta-section ">
+	<div class="container">
+		<div class="cta position-relative">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-doctor"></i>
+						<span class="h3">58</span>k
+						<p>Satisfied Clients</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-flag"></i>
+						<span class="h3">700</span>+
+						<p>Surgeries Completed</p>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-badge"></i>
+						<span class="h3">40</span>+
+						<p>Healthcare Specialists</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="counter-stat">
+						<i class="icofont-globe"></i>
+						<span class="h3">20</span>
+						<p>Worldwide Branch</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section service gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7 text-center">
+				<div class="section-title">
+					<h2>Award winning patient care</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>At Daraja Care, we are dedicated to delivering exceptional patient care that sets a new standard in healthcare. With a commitment to innovation and compassion, we ensure that every patient receives the highest quality of care tailored to their individual needs.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-laboratory text-lg"></i>
+						<h4 class="mt-3 mb-3">Laboratory services</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">Our state-of-the-art laboratory services provide accurate and timely results, enabling doctors to make well-informed decisions to ensure your health is in the best hands.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-heart-beat-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Heart Disease</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our heart disease specialists provide advanced care and treatment options, ensuring that your cardiovascular health is supported by the latest medical innovations and personalized care plans.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-tooth text-lg"></i>
+						<h4 class="mt-3 mb-3">Dental Care</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">From routine check-ups to advanced treatments, our dental care services focus on maintaining a healthy smile and overall oral hygiene, providing the best in dental health care.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-crutch text-lg"></i>
+						<h4 class="mt-3 mb-3">Cosmetic Surgery</h4>
+					</div>
+
+					<div class="content">
+						<p class="mb-4">Our experienced surgical team performs a wide range of cosmetic surgeries, ensuring the highest level of care, safety, and a focus on your swift recovery and well-being.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-brain-alt text-lg"></i>
+						<h4 class="mt-3 mb-3">Neurology Surgery</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our neurologists provide cutting-edge treatments and interventions for brain and nervous system conditions, helping you regain control of your health with confidence and care.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="service-item mb-4">
+					<div class="icon d-flex align-items-center">
+						<i class="icofont-dna-alt-1 text-lg"></i>
+						<h4 class="mt-3 mb-3">Gynecology</h4>
+					</div>
+					<div class="content">
+						<p class="mb-4">Our gynecology services provide expert care for women at all stages of life, from routine screenings to advanced treatments, ensuring your reproductive health is in excellent hands.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonial-2 gray-bg">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>We served over 5000+ Patients</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>We take great pride in the care and service we offer to our patients. Over the years, we have helped more than 5000 patients receive the care they need, making a meaningful impact on their health and wellbeing.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-12 testimonial-wrap-2">
+				<div class="testimonial-block style-2  gray-bg">
+					<i class="icofont-quote-right"></i>
+
+					<div class="testimonial-thumb">
+						<img src="{% static 'assets/images/team/test-thumb1.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info ">
+						<h4>Amazing service!</h4>
+						<span>Peter Juma</span>
+						<p>
+							I received exceptional care during my treatment. The staff was attentive, and the medical professionals provided detailed explanations that made me feel comfortable throughout the process. I highly recommend their services!
+						</p>
+					</div>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'assets/images/team/test-thumb2.jpeg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Expert doctors!</h4>
+						<span>Beatrice Kyalo</span>
+						<p>
+							The doctors here are incredibly knowledgeable and thorough. They made sure I understood my condition and the steps needed for my recovery. I felt confident in their care and am grateful for the attention I received.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'assets/images/team/test-thumb3.jpg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Good Support!</h4>
+						<span>Lydia Wanjiru</span>
+						<p>
+							The support team was always available and quick to respond to my queries. From scheduling appointments to handling billing issues, everything was seamless, which made my experience much more pleasant.
+						</p>
+					</div>
+					
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'assets/images/team/test-thumb4.jpeg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Nice Environment!</h4>
+						<span>Rebecca Karimi</span>
+						<p class="mt-4">
+							The environment at the clinic was calming and welcoming. The staff made sure I felt at ease during every visit, and the clinic itself was clean, well-maintained, and designed to help patients relax.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+
+				<div class="testimonial-block style-2  gray-bg">
+					<div class="testimonial-thumb">
+						<img src="{% static 'assets/images/team/test-thumb5.jpeg' %}" alt="" class="img-fluid">
+					</div>
+
+					<div class="client-info">
+						<h4>Modern Service!</h4>
+						<span>Peninah Wendo</span>
+						<p>
+							The clinic offers state-of-the-art technology and modern treatments. I felt confident that I was receiving the best care available, and the results were truly impressive.
+						</p>
+					</div>
+					<i class="icofont-quote-right"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="section clients">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<div class="section-title text-center">
+					<h2>Partners who support us</h2>
+					<div class="divider mx-auto my-4"></div>
+					<p>We are proud to collaborate with a wide range of partners who share our commitment to enhancing healthcare. These valued partnerships allow us to provide our patients with the highest standard of care and innovative treatment options. Together, we continue to work towards creating a healthier tomorrow.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row clients-logo">
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/1.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/2.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/3.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/4.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/5.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+			<div class="col-lg-2">
+				<div class="client-thumb">
+					<img src="{% static 'assets/images/about/6.png' %}" alt="" class="img-fluid">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

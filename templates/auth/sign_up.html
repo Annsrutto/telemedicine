@@ -1,0 +1,91 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block title %} Sign Up {% endblock %}
+
+{% block content %}
+
+{% if messages %}
+<ul>
+  {% for message in messages %}
+    <li class="{% if message.tags == 'error' %}text-danger{% else %}text-success{% endif %}" >
+      {{ message }}
+    </li>
+  {% endfor %}
+</ul>
+{%endif%}
+
+<div class="cont">
+  <div class="form sign-in">
+    <h2>Login</h2>
+    <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>
+                <span>Username</span>
+                <input type="text" name="username" required/>
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" name="password" required/>
+              </label>
+              <p class="forgot-pass">Forgot password?</p>
+              <button type="submit" class="submit">Login</button>
+        </form>
+    </div>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New user?</h2>
+        <p>Register to create an account<a href="{% url 'user_auth:register' %}"></a></p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>Already have an account? <a href="{% url 'user_auth:login' %}"></a></p>
+      </div>
+      <div class="img__btn">
+        <span class="m--up">Register</span>
+        <span class="m--in">Login</span>
+      </div>
+    </div>
+    <div class="form sign-up">
+      <h2>Create an account</h2>
+      <div>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label>
+                <span>User Name</span>
+                <input type="text" name="username" required/>
+              </label>
+              <label>
+                <span>Email</span>
+                <input type="email" name="email" required/>
+              </label>
+              <label>
+                <span>Phone Number</span>
+                <input type="tel" name="phone" required/>
+              </label>
+              <label>
+                <span>Password</span>
+                <input type="password" name="password" required/>
+              </label>
+              <label>
+                <span>Repeat Password</span>
+                <input type="password" name="confirm_password" required/>
+              </label>
+              
+              <button type="submit" class="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <a href="https://dribbble.com/shots/3306190-Login-Registration-form" target="_blank" class="icon-link">
+  <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
+</a> -->
+<!-- <a href="https://codepen.io/suez/pen/XWyBpre" target="_blank" class="link-footer">New 2023 Version</a>
+<a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+  <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+</a> -->
+{% endblock %}
