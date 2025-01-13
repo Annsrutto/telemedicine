@@ -67,8 +67,6 @@ def appointments(request):
             date = request.POST['date'],
             doctor = request.POST['doctor'],
             department = request.POST['department'],
-            # appointment_type = request.POST['appointment_type'],
-            # booking = request.POST['booking'],
             message = request.POST['message'],
             user = request.user,
         )
@@ -87,7 +85,7 @@ def appointments(request):
         return render(request, 'pages/appointment.html', context)
 
 # Retrieve all appointments
-@login_required
+@login_required(login_url='user_auth:login')
 def display_appointments(request):
     """Displays all appointments"""
     # Create variable for storing appointments

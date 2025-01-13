@@ -59,4 +59,4 @@ def user_logout(request):
     """Function to logout"""
     logout(request)
     messages.success(request, "You have successfully logged out.")
-    return redirect('user_auth:home')
+    return redirect('telemed_app:home')
