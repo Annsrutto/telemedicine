@@ -1,6 +1,8 @@
 import requests
 import json
 
+import qrcode
+
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.files.storage import FileSystemStorage
@@ -8,6 +10,11 @@ from .models import Appointment, Department, Doctor, Contact, UploadedImage
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from telemed_app.credentials import LipanaMpesaPpassword, MpesaAccessToken
+
+from io import BytesIO
+from django.http import HttpResponse
+from django.conf import settings
+
 
 
 # Create your views here.
@@ -54,12 +61,12 @@ def contact(request):
     else:
         return render(request, 'pages/contact.html')
 
-@login_required(login_url='user_auth:login')
+# @login_required(login_url='user_auth:login')
 def appointments(request):
     """Contains form for booking appointments"""
     # Check if its a POST method
     if request.method == 'POST':
-        # Create a variable to pick appointments table inputs
+        # Create a variable to pick appointments table inputs 
         appointments = Appointment (
             name = request.POST['name'],
             email = request.POST['email'],
@@ -85,7 +92,7 @@ def appointments(request):
         return render(request, 'pages/appointment.html', context)
 
 # Retrieve all appointments
-@login_required(login_url='user_auth:login')
+# @login_required(login_url='user_auth:login')
 def display_appointments(request):
     """Displays all appointments"""
     # Create variable for storing appointments
@@ -202,3 +209,36 @@ def stk(request):
         # return HttpResponse("Payment successful")
 
         return redirect('telemed_app:appointments')
+
+# # QR Code Generation
+# def generate_qr(request):
+#     """Generate a QR code for the website URL"""
+#     website_url = request.build_absolute_uri("/")  # Get the base URL of your website
+
+#     qr = qrcode.QRCode(
+#         version=1,
+#         error_correction=qrcode.constants.ERROR_CORRECT_L,
+#         box_size=10,
+#         border=4,
+#     )
+#     qr.add_data(website_url)
+#     qr.make(fit=True)
+
+#     img = qr.make_image(fill_color="black", back_color="white")
+
+#     buffer = BytesIO()
+#     img.save(buffer, format="PNG")
+#     return HttpResponse(buffer.getvalue(), content_type="image/png")
+
+# Downaloadable QR Code
+def generate_qr_download(request):
+    """Generate and download a QR code for the website URL"""
+    website_url = request.build_absolute_uri("/")
+    qr = qrcode.make(website_url)
+
+    buffer = BytesIO()
+    qr.save(buffer, format="PNG")
+    response = HttpResponse(buffer.getvalue(), content_type="image/png")
+    response["Content-Disposition"] = 'attachment; filename="website_qr.png"'
+    return response
+

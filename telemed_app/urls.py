@@ -20,4 +20,6 @@ urlpatterns = [
     path('pay/', views.pay, name='pay'), # view the payment form
     path('stk/', views.stk, name='stk'), # send the stk push prompt
     path('token/', views.token, name='token'), # generate the token for that particular transaction
+    # path('qr/', views.generate_qr, name='generate_qr'), # QR code generation
+    path('qr/download/', views.generate_qr_download, name='generate_qr_download'), #Downloadable QRCode
 ]
